@@ -1,0 +1,26 @@
+// Jenkinsfilees
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    docker.build("hello-node:${BUILD_NUMBER}")
+                }
+            }
+        }
+
+        stage('Run Hello World') {
+            steps {
+                sh 'docker run --rm hello-node:${BUILD_NUMBER}'
+            }
+        }
+    }
+}
