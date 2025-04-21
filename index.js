@@ -1,4 +1,11 @@
-const PORT = 8081;
-app.listen(PORT, '0.0.0.0', () => {
+const http = require('http');
+
+const PORT = 8181;
+const server = http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'test/plain'});
+  res.end('Hello World\n');
+});
+
+server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

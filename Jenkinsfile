@@ -19,7 +19,7 @@ pipeline {
 
         stage('Run Hello World') {
             steps {
-                sh 'docker run -d -p 8081:8081 hello-node:${BUILD_NUMBER}'
+                sh 'docker run -d -p 8181:8181 hello-node:${BUILD_NUMBER}'
             }
         }
     }
