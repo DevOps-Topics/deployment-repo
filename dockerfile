@@ -1,5 +1,5 @@
 FROM node:18-alpine
-WORKDIR /APP
+WORKDIR /src
 COPY . .
 EXPOSE 8181
-CMD ["node", "index.js"]
+CMD ["node", "/src/index.js"]
