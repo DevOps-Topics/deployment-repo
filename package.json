@@ -7,6 +7,11 @@
     "test": "jest"
   },
 
+"jest-junit": {
+  "outputDirectory": "./reports",
+  "outputName": "junit.xml"
+},
+
   "devDependencies": {
     "jest": "^29.0.0"
   },

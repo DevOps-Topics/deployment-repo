@@ -17,14 +17,16 @@ pipeline {
             }
 
             steps {
-                sh "npm install"
+                mkdir -p ~/.npm
+                npm config set cache ~/.npm
+                sh "npm install --save-dev jest jest-junit "
                 sh 'npm test -- --ci --reporters=jest-junit'
             }
             
             post {
                 
                 always {
-                    junit 'junit.xml'
+                    junit 'reports/junit.xml'
             }
         }
 
