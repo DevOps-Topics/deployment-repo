@@ -17,8 +17,8 @@ pipeline {
             }
 
             steps {
-                mkdir -p ~/.npm
-                npm config set cache ~/.npm
+                sh " mkdir -p ~/.npm "
+                sh " npm config set cache ~/.npm "
                 sh "npm install --save-dev jest jest-junit "
                 sh 'npm test -- --ci --reporters=jest-junit'
             }
